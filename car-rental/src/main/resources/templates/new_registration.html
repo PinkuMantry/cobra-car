@@ -1,0 +1,224 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+Customer Registration
+</title>
+<script>
+    function check()
+    {
+        var a=document.getElementById("pass").value;
+        var b=document.getElementById("pass1").value;
+        var c=document.getElementById("pass3").value;
+        var d=document.getElementById("pass4").value;
+        
+        if(a!=b)
+        alert("Both the password should be same");
+        else if(c!=d)
+        alert("Both the password should be same");
+        
+    }
+</script>
+</head>
+<body style="background-color:yellow;">
+
+<h1 style="color:rgb(0, 4, 233); font-size:100; position:absolute; top:-70; left:25%" id="car">COBRA  CAR</h1>
+<marquee direction="left">
+<img src="/images/move.png" style="height: 100px; width: 300px">
+</marquee>
+<center><h2 style="color:red">[[${message}]]</h2></center>
+<div style="width: 45%;float:left;background-color:black;border-radius:30px; margin:30px">
+<h1 style="text-align:center; color:rgb(255, 96, 194);">CUSTOMER REGISTRATION<h1>
+<form th:action="@{/rental/saveUser}">
+<center>
+<table border="1" style="border-color:aqua; border-style: solid;">
+<tr>
+<td style="color:white">
+Name :
+</td>
+<td>
+<input type="text" id="name" name="name" placeholder="Enter Your Name" required> 
+</td>
+</tr>
+
+<tr required>
+<td style="color:white">
+Age :
+</td>
+<td>
+<input type="number" id="age" name="age" placeholder="Enter Your Age" required> 
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Gender :</td>
+<td>
+<label for="g1" style="color:white">
+Male<input type="radio" id="g1" name="gen" value="male"> 
+</label><br>
+<label for="g2" style="color:white">
+Female<input type="radio" id="g2" name="gen" value="female">
+</label><br>
+<label for="g3" style="color:white">
+Other<input type="radio" id="g3" name="gen" value="other" required>
+</label>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Mobile :</td>
+<td>
+<input type="tel" pattern="[0-9]{10}" placeholder="Enter 10 Digit Number" id="mob" name="mob" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Email :</td>
+<td>
+<input type="email" placeholder="Enter Your Email" id="email" name="email" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">role :</td>
+<td>
+<input type="text" id="role" name="role" value="customer" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Address :</td>
+<td>
+<textarea placeholder="Enter Your Current Location" id="addr" name="addr" required></textarea>
+</td>
+</tr>
+
+<tr>
+    <td style="color:white">
+    Enter Password :
+    </td>
+    <td>
+    <input type="password" id="pass" name="pass" placeholder="Enter Your Password" required> 
+    </td>
+</tr>
+
+<tr>
+    <td style="color:white">
+    Confirm Password :
+    </td>
+    <td>
+    <input type="password" id="pass1" placeholder="Confirm Your Password" onmouseout="check()" required> 
+    </td>
+</tr>
+
+</table>
+<center>
+<button type="submit" style="background-color:rgb(3, 250, 3); height:30px; width:80px; border-radius:30px;">Register</button>
+<button type="reset" style="background-color:rgb(255, 136, 0); height:30px; width:80px; border-radius:30px;">Cancel</button>
+</center>
+</form>
+</div>
+
+
+
+<div style="width: 45%;float:right; background-color:black; border-radius:30px; margin:30px">
+<h1 style="text-align:center; color:rgb(255, 96, 194);">DRIVER REGISTRATION<h1>
+<form th:action="@{/rental/saveUser}" >
+<center>
+<table border="1" style="border-color:aqua; border-style: solid;">
+<tr>
+<td style="color:white">
+Name :
+</td>
+<td>
+<input type="text" id="name" name="name" placeholder="Enter Your Name" required> 
+</td>
+</tr>
+
+<tr required>
+<td style="color:white">
+Age :
+</td>
+<td>
+<input type="number" id="age" name="age" placeholder="Enter Your Age" required> 
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Gender :</td>
+<td>
+<label for="g1" style="color:white">
+Male<input type="radio" id="g1" name="gen" value="male"> 
+</label><br>
+<label for="g2" style="color:white">
+Female<input type="radio" id="g2" name="gen" value="female">
+</label><br>
+<label for="g3" style="color:white">
+Other<input type="radio" id="g3" name="gen" value="other" required>
+</label>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Mobile :</td>
+<td>
+<input type="tel" pattern="[0-9]{10}" placeholder="Enter 10 Digit Number" id="mob" name="mob" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Email :</td>
+<td>
+<input type="email" placeholder="Enter Your Email" id="email" name="email" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">role :</td>
+<td>
+<input type="text" id="role" name="role" value="driver" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">car number :</td>
+<td>
+<input type="text" id="cnumber" name="cnumber" placeholder="car number" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">DL number :</td>
+<td>
+<input type="text" id="dlnumber" name="dlnumber" placeholder="Driving License number" required>
+</td>
+</tr>
+
+<tr>
+    <td style="color:white">
+    Enter Password :
+    </td>
+    <td>
+    <input type="password" id="pass3" name="pass" placeholder="Enter Your Password" required> 
+    </td>
+</tr>
+
+<tr>
+    <td style="color:white">
+    Confirm Password :
+    </td>
+    <td>
+    <input type="password" id="pass4" placeholder="Confirm Your Password" onmouseout="check()" required> 
+    </td>
+</tr>
+
+</table>
+<center>
+<button type="submit" style="background-color:rgb(3, 250, 3); height:30px; width:80px; border-radius:30px;">Register</button>
+<button type="reset" style="background-color:rgb(255, 136, 0); height:30px; width:80px; border-radius:30px;">Cancel</button>
+</center>
+</form>
+</div>
+
+
+</body>
+</html>

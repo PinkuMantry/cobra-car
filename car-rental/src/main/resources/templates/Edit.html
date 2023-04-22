@@ -1,0 +1,87 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+Update page
+</title>
+<style>
+ body{
+		background-image: url('/images/blackf.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+</head>
+<body style="background-color:black; margin: 0;">
+<h1 style="text-align:center; color:rgb(255, 96, 194);">User Update<h1>
+<form th:action="@{/rental/updateUser}" th:object="${user}">
+<center>
+<table border="1" style="border-color:aqua; border-style: solid;">
+
+<input type="hidden" th:field="*{Id}" required>
+
+<tr>
+<td style="color:white">
+Name :
+</td>
+<td>
+<input type="text" th:field="*{name}" required> 
+</td>
+</tr>
+
+<tr required>
+<td style="color:white">
+Age :
+</td>
+<td>
+<input type="number" th:field="*{age}" required> 
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Gender :</td>
+<td>
+<label for="g1" style="color:white">
+Male<input type="radio" th:field="*{gen}" value="male"> 
+</label><br>
+<label for="g2" style="color:white">
+Female<input type="radio" th:field="*{gen}" value="female">
+</label><br>
+<label for="g3" style="color:white">
+Other<input type="radio" th:field="*{gen}" value="other" required>
+</label>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Mobile :</td>
+<td>
+<input type="tel" pattern="[0-9]{10}" th:field="*{mob}" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Email :</td>
+<td>
+<input type="email" th:field="*{email}" readonly required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Address :</td>
+<td>
+<textarea placeholder="Enter Your Current Location" id="addr" name="addr" th:field="*{addr}" required></textarea>
+</td>
+</tr>
+
+<input type="hidden" th:field="*{role}" required>
+<input type="hidden" th:field="*{pass}" required>
+
+</table>
+<center>
+<br>
+<button type="submit" style="background-color:rgb(3, 250, 3); height:50px; width:180px; border-radius:30px;font-size: 20;"><b>Update</b></button>
+</center>
+</form>
+[[${message}]]
+</body>
+</html>

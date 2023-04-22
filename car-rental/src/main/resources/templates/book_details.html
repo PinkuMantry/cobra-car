@@ -1,0 +1,71 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+Search Car
+</title>
+<style>
+ body{
+		background-image: url('/images/road.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+</head>
+<body style="background-color:black; margin: 0;">
+<div style="background-color:rgb(255, 230, 0);">
+<h1 style="color:rgb(0, 4, 233); font-size:120; position:absolute; top:-70; left:25%" id="car">COBRA  CAR</h1>
+<marquee direction="left">
+<img src="/images/move.png"/>
+</marquee>
+</div>
+<h1 style="text-align:center; color:rgb(255, 96, 194);">Car Book<h1>
+<form th:action="@{/rental/bookConfirm}">
+<center>
+<table border="1" style="border-color:aqua; border-style: solid;">
+<tr>
+
+<input type="hidden" id="carNumber" name="carNumber" value="null">
+<input type="hidden" id="consumerName" name="consumerName"> 
+
+<tr>
+<td style="color:white">
+Source :
+</td>
+<td>
+<input type="text" id="source" name="source" required> 
+</td >
+</tr>
+<tr>
+<td style="color:white">
+Destination :
+</td>
+<td>
+<input type="text" id="destination" name="destination" required> 
+</td>
+</tr>
+<tr>
+<td style="color:white">
+Date :
+</td>
+<td>
+<input type="date" id="date" name="date" required> 
+</td>
+</tr>
+<tr>
+<td style="color:white">
+Time :
+</td>
+<td>
+<input type="time" id="time" name="time" required> 
+</td>
+</tr>
+
+<input type="hidden" id="status" name="status" value="pending"> 
+</table>
+<center>
+<button type="submit" style="background-color:rgb(3, 250, 3); height:30px; width:150px; border-radius:30px;"><b>Rise a Request<b></button>
+<button type="reset" style="background-color:rgb(255, 136, 0); height:30px; width:80px; border-radius:30px;">Cancel</button>
+</center>
+</form>
+</body>
+</html>

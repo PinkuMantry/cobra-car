@@ -1,0 +1,119 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+Registration Page
+</title>
+<script>
+    function check()
+    {
+        var a=document.getElementById("pass").value;
+        var b=document.getElementById("pass1").value;
+        if(a!=b)
+        alert("Both the password should be same");
+    }
+</script>
+</head>
+<body style="background-color:black; margin: 0;">
+<div style="background-color:rgb(255, 230, 0);">
+<h1 style="color:rgb(0, 4, 233); font-size:120; position:absolute; top:-70; left:25%" id="car">COBRA  CAR</h1>
+<marquee direction="left">
+<img src="/images/7894432.png"/>
+</marquee>
+</div>
+<h1 style="text-align:center; color:rgb(255, 96, 194);">NEW REGISTRATION<h1>
+<form th:action="@{/rental/saveUser}">
+<center>
+<table border="1" style="border-color:aqua; border-style: solid;">
+<tr>
+<td style="color:white">
+Name :
+</td>
+<td>
+<input type="text" id="name" name="name" placeholder="Enter Your Name" required> 
+</td>
+</tr>
+
+<tr required>
+<td style="color:white">
+Age :
+</td>
+<td>
+<input type="number" id="age" name="age" placeholder="Enter Your Age" required> 
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Gender :</td>
+<td>
+<label for="g1" style="color:white">
+Male<input type="radio" id="g1" name="gen" value="male"> 
+</label><br>
+<label for="g2" style="color:white">
+Female<input type="radio" id="g2" name="gen" value="female">
+</label><br>
+<label for="g3" style="color:white">
+Other<input type="radio" id="g3" name="gen" value="other" required>
+</label>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Mobile :</td>
+<td>
+<input type="tel" pattern="[0-9]{10}" placeholder="Enter 10 Digit Number" id="mob" name="mob" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Email :</td>
+<td>
+<input type="email" placeholder="Enter Your Email" id="email" name="email" required>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">role :</td>
+<td>
+<select id="role" name="role" required>
+<option id="customer" name="customer">Customer</option>
+<option id="driver" name="driver">Driver</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Address :</td>
+<td>
+<textarea placeholder="Enter Your Current Location" id="addr" name="addr" required></textarea>
+</td>
+</tr>
+
+<tr>
+    <td style="color:white">
+    Enter Password :
+    </td>
+    <td>
+    <input type="password" id="pass" name="pass" placeholder="Enter Your Password" required> 
+    </td>
+</tr>
+
+<tr>
+    <td style="color:white">
+    Confirm Password :
+    </td>
+    <td>
+    <input type="password" id="pass1" placeholder="Confirm Your Password" onmouseout="check()" required> 
+    </td>
+</tr>
+
+</table>
+<center>
+<button type="submit" style="background-color:rgb(3, 250, 3); height:30px; width:80px; border-radius:30px;">Register</button>
+<button type="reset" style="background-color:rgb(255, 136, 0); height:30px; width:80px; border-radius:30px;">Cancel</button>
+</center>
+</form>
+<div>
+<center><h2 style="color:white">[[${message}]]</h2></center>
+</div>
+</body>
+</html>

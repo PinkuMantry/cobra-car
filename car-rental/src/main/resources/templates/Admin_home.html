@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>
+Admin Home Page
+</title>
+<style>
+    
+    nav{
+        height: 70;
+        background-color:coral; 
+        align-items: center;
+        display:flex;
+        justify-content: space-around;
+        font-weight: bold;
+    }
+    .cobra{
+        font-size: 50;
+        width: 45%;
+        padding-left: 2%;
+        color:cyan;
+    }
+    .list{
+        font-size: 20;
+        width: 55%;
+        display:flex;
+        justify-content: space-around;
+    }
+    button{
+        background-color: chartreuse;
+        border-radius: 10px;
+        height: 40px;
+        width: 130px;
+        font-size: 20;
+        margin-top: 10%;
+    }
+        body{
+		background-image: url('/images/ahome.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+</head>
+<body style="background-color:black ;">
+<nav>
+    <div class="cobra">COBRA CAR</div>
+    <div class="list">
+        <a th:href="@{/rental/allCustomer}">All Customer</a>
+        <a th:href="@{/rental/allDriver}">All Driver</a>
+        <a th:href="@{/rental/AllBooking}">All Booking</a>
+        <a th:href="@{/rental/allPending}">All Pending</a>
+        <a th:href="@{/rental/allCompleted}">All Completed</a>
+    </div>
+</nav>
+<div style="padding-left: 90%;"><button onclick="location.href='/logout'"><b>Logout</b></button></div>
+</body>
+</html>

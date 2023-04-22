@@ -1,0 +1,23 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+Registration Page
+</title>
+
+</head>
+<body style="background-color:rgb(255, 230, 0);">
+<h1 style="color:rgb(0, 4, 233); font-size:120; position:absolute; top:-70; left:25%" id="car">COBRA  CAR</h1>
+
+<marquee direction="left">
+<img src="/images/move.png"/>
+</marquee>
+<form th:action="@{/rental/saveComplain}">
+<center>
+<textarea placeholder="write your complain with full explanation" id="compl" name="compl" style="width:1000px; height:200px" required></textarea>
+</center>
+ <br>
+<div style="padding-left: 80%;"><button type="submit" style="background-color:rgb(3, 250, 3); height:30px; width:80px; border-radius:30px;">Submit</button></div>
+</form>
+<center><h2 style="color:red">[[${message}]]</h2></center>
+</body>
+</html>

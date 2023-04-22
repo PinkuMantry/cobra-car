@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>
+Home Page
+</title>
+<style>
+    
+    nav{
+        height: 70;
+        background-color:rgb(192, 191, 193); 
+        align-items: center;
+        display:flex;
+        justify-content: space-around;
+    }
+    .cobra{
+        font-size: 50;
+        width: 40%;
+        padding-left: 2%;
+        color:darkred;
+    }
+    .list{
+        font-size: 25;
+        width: 40%;
+        display:flex;
+        justify-content: space-around;
+    }
+  
+    body{
+		background-image: url('/images/home.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+</style>
+</head>
+<body>
+<div>
+<nav>
+    <div class="cobra"><b>COBRA CAR</b></div>
+    <div class="list">
+    	<a href="/rental/newRegister"><b>Register</b></a>
+        <a href="/rental/Admin_home"><b>Admin</b></a>
+        <a href="/rental/customer_home"><b>Customer</b></a>
+        <a href="/rental/driver_home"><b>Driver</b></a>
+    </div>
+    <div class="details" style="background-color:white;border-radius:50%">
+        <a href="/rental/details"><img src="/images/redlogo.png"></a>
+	</div>
+</nav>
+</div>
+
+<center><h1 style="color:darkred">[[${message}]]</h1></center>
+
+</body>
+</html>

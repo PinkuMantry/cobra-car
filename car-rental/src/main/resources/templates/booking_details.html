@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>
+Booking Details Page
+</title>
+<style>
+ body{
+		background-image: url('/images/jungle.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+</head>
+<body style="background-color:black ;">
+<h1 style="text-align:center; color:rgb(255, 96, 194);">CAR  Booking  Details<h1>
+<center>
+
+<div style="width: 70%;float:left;">
+<table border="1" style="border-color:rgb(195, 0, 255); border-style: solid;"align="right">
+<tr>
+<th style="color:white">Id</th>
+<th style="color:white">Consumer Name</th>
+<th style="color:white">Source</th>
+<th style="color:white">Destination</th>
+<th style="color:white">Date</th>
+<th style="color:white">Time</th>
+<th style="color:white">Car Number</th>
+<th style="color:white">Status</th>
+<th style="color:white">Action</th>
+</tr>
+<tr th:each="ob:${lb}">
+<td style="color:white">[[${ob.id}]]</td>
+<td style="color:white">[[${ob.consumerName}]]</td>
+<td style="color:white">[[${ob.source}]]</td>
+<td style="color:white">[[${ob.destination}]]</td>
+<td style="color:white">[[${ob.date}]]</td>
+<td style="color:white">[[${ob.Time}]]</td>
+<td style="color:white">[[${ob.carNumber}]]</td>
+<td style="color:white">[[${ob.status}]]</td>
+<td>
+	<a th:href="@{/rental/acceptBook(id=${ob.Id})}">Accept</a>
+</td>
+</tr>
+</table>
+<br><br>
+<h3 style="color:white">[[${message}]]</h3>
+</div>
+<div style="width: 30%;float:right" align="center"><button onclick="location.href='/rental/driver_home'" style="background-color:orange; height:50px; width:200px; border-radius:30px;font-size: 20;"><b>Back to Home</b></button></div>
+</body>
+</html>

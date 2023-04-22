@@ -1,0 +1,57 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+Profile Details
+</title>
+<style>
+    th,td{
+        color:white;
+    }
+    body{
+		background-image: url('/images/blackf.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+</head>
+<body style="background-color:black; margin: 0;">
+<h1 style="text-align:center; color:rgb(255, 96, 194);">Profile Details<h1>
+<center>
+<table border="1" style="border-color:aqua; border-style: solid;" th:object="${user}">
+<tr>
+    <td>Name</td>
+    <td>[[${user.name}]]</td>
+</tr>
+<tr>
+    <td>Age</td>
+    <td>[[${user.age}]]</td>
+</tr>
+<tr>
+    <td>Gender</td>
+    <td>[[${user.gen}]]</td>
+</tr>
+<tr>
+    <td>Mobile</td>
+    <td>[[${user.mob}]]</td>
+</tr>
+<tr>
+    <td>Email</td>
+    <td>[[${user.email}]]</td>
+</tr>
+<tr>
+    <td>Car Number</td>
+    <td>[[${user.cnumber}]]</td>
+</tr>
+<tr>
+    <td>Driving License Number</td>
+    <td>[[${user.dlnumber}]]</td>
+</tr>
+</table>
+<br>
+<a th:href="@{/rental/deleteOneUser(id=${user.Id})}"><button style="background-color:red; height:50px; width:180px; border-radius:30px;font-size: 20;"><b>Delete Profile</b></button></a>
+<a th:href="@{/rental/editDriver(Id=${user.Id})}"><button style="background-color:orange; height:50px; width:180px; border-radius:30px;font-size: 20;"><b>Edit Profile</b></button></a>
+    
+</center>
+<h4 style="color:white">[[${message}]]</h4>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+Admin LogIn Page
+</title>
+<style>
+    div{
+        background-color: crimson;
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: 15%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        border-radius: 30px;
+        opacity: 0.9;
+    }
+    body{
+		background-image: url('/images/3456234.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+<script>
+</script>
+</head>
+<body style="background-color:black ;">
+<div>
+<h1 style="text-align:center;">Admin Login Page<h1>
+<form th:action="@{/login}" method="POST">
+<center>
+<table>
+<tr>
+    <td style="color:white">Admin Name:</td>
+    <td>
+    <input type="text" id="username" name="username" placeholder="Enter Name" required>
+    </td>
+</tr>
+<tr>
+    <td style="color:white">
+    Enter Password :
+    </td>
+    <td>
+    <input type="password" id="password" name="password" placeholder="Enter Your Password" required> 
+    </td>
+</tr>
+</table>
+<center>
+<button type="submit" style="background-color:rgba(43, 255, 0, 0.856); height:30px; width:80px; border-radius:30px; margin-top: 2%;">Login</button>
+</center>
+</form>
+</div>
+<!--<div th:if="${param.error}">User Login failed
+</div>-->
+</body>
+</html>

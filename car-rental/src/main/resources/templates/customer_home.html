@@ -1,0 +1,59 @@
+<html xmlns:th="www.thymeleaf.org/">
+<head>
+<title>
+User Home Page
+</title>
+<style>
+    
+    nav{
+        height: 70;
+        background-color:coral; 
+        align-items: center;
+        display:flex;
+        justify-content: space-around;
+        font-weight: bold;
+    }
+    .cobra{
+        font-size: 50;
+        width: 40%;
+        padding-left: 2%;
+        color:cyan;
+    }
+    .list{
+        font-size: 25;
+        width: 60%;
+        display:flex;
+        justify-content: space-around;
+    }
+    button{
+        background-color: chartreuse;
+        border-radius: 10px;
+        height: 40px;
+        width: 130px;
+        font-size: 20;
+        margin-top: 10%;
+    }
+    body{
+		background-image: url('/images/admin_user.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+</head>
+<body style="background-color:black ;">
+<nav>
+    <div class="cobra">COBRA CAR</div>
+    <div class="list">
+        <a th:href="@{/rental/Profile}">My Profile</a>
+        <a th:href="@{/rental/book}">Book Car</a>
+        <a th:href="@{/rental/booking_user}">My Bookings</a>
+        <a th:href="@{/rental/report}">Report Complaint</a>
+    </div>
+</nav>
+<div style="padding-left: 90%;"><button onclick="location.href='/logout'"><b>Logout</b></button></div>
+<form>
+
+
+</form>
+</body>
+</html>

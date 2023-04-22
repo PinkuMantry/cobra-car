@@ -1,0 +1,49 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+All Customer Details
+</title>
+<style>
+    th,td{
+        color:white;
+    }
+     body{
+		background-image: url('/images/abc.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+</head>
+<body style="background-color:black; margin: 0;">
+<h1 style="text-align:center; color:rgb(255, 96, 194);">All Customer Details<h1>
+<center>
+<table border="1" style="border-color:aqua; border-style: solid;">
+<tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Role</th>
+    <th>Operation</th>
+</tr>
+<tr th:each="ob:${u}">
+    <td>[[${ob.Id}]]</td>
+    <td>[[${ob.name}]]</td>
+    <td>[[${ob.age}]]</td>
+    <td>[[${ob.gen}]]</td>
+    <td>[[${ob.mob}]]</td>
+    <td>[[${ob.email}]]</td>
+    <td>[[${ob.addr}]]</td>
+    <td>[[${ob.role}]]</td>
+    <td>
+        <a th:href="@{/rental/deleteCustomer(id=${ob.Id})}">delete</a>
+    </td>
+</tr>
+</table>
+<h3 style="color:white">[[${message}]]</h3>
+</center>
+</body>
+</html>

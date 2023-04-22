@@ -1,0 +1,39 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+Available Cars
+</title>
+<style>
+    th,td{
+        color:white;
+    }
+</style>
+</head>
+<body style="background-color:black; margin: 0;">
+<h1 style="text-align:center; color:rgb(255, 96, 194);">All Available Cars<h1>
+
+<div style="width: 62%;float:left;">
+<table border="1" style="border-color:aqua; border-style: solid;"align="right">
+<tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Car Number</th>
+    <th>Driver Name</th>
+    <th>Driver DL</th>
+</tr>
+<tr th:each="ob:${c}">
+    <td>[[${ob.CId}]]</td>
+    <td>[[${ob.cName}]]</td>
+    <td>[[${ob.cNumber}]]</td>
+    <td>[[${ob.cDriverName}]]</td>
+    <td>[[${ob.cDriverDl}]]</td>
+</tr>
+</table>
+<h3 style="color:white">[[${message}]]</h3>
+</div>
+<br>
+<div style="width: 38%;float:right;" align="center"><button onclick="location.href='/rental/user_home'" style="background-color:orange; height:50px; width:200px; border-radius:30px;font-size: 20;"><b>Back to Home</b></button></div>
+
+
+</body>
+</html>

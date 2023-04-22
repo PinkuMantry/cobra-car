@@ -1,0 +1,77 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>
+Car Registration Page
+</title>
+<style>
+   #home{
+        background-color: chartreuse;
+        border-radius: 10px;
+        height: 40px;
+        width: 130px;
+        font-size: 20;
+        margin-top: 10%;
+    }
+    body{
+		background-image: url('/images/3456234.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+</head>
+<body style="background-color:black; margin: 0;">
+<div style="background-color:rgb(255, 230, 0);">
+<h1 style="color:rgb(0, 4, 233); font-size:120; position:absolute; top:-70; left:25%" id="car">COBRA  CAR</h1>
+<marquee direction="left">
+<img src="/images/7894432.png"/>
+</marquee>
+</div>
+<div style="padding-left: 90%;"><button onclick="location.href='/logout'" id="home"><b>Logout</b></button></div>
+<h1 style="text-align:center; color:rgb(255, 0, 0);">NEW CAR REGISTRATION<h1>
+<form th:action="@{/rental/saveCar}">
+<center>
+<table border="1" style="border-color:aqua; border-style: solid;">
+<tr>
+<td style="color:white">
+Car Name :
+</td>
+<td>
+<input type="text" id="cName" name="cName" placeholder="Enter Car Name" required> 
+</td>
+</tr>
+
+<tr required>
+<td style="color:white">
+Car Number :
+</td>
+<td>
+<input type="text" id="cNumber" name="cNumber" placeholder="Enter Car number" required> 
+</td>
+</tr>
+
+<tr>
+<td style="color:white">Driver Name :</td>
+<td>
+<input type="text" placeholder="Enter Driver Name" id="cDriverName" name="cDriverName" required>
+</td>
+</tr>
+
+<tr>
+    <td style="color:white">
+    Driver DL number :
+    </td>
+    <td>
+    <input type="test" id="cDriverDl" name="cDriverDl" placeholder="Enter driver DL" required> 
+    </td>
+</tr>
+
+</table>
+<center>
+<button type="submit" style="background-color:rgb(3, 250, 3); height:30px; width:80px; border-radius:30px;">Register</button>
+<button type="reset" style="background-color:rgb(255, 136, 0); height:30px; width:80px; border-radius:30px;">Cancel</button>
+</center>
+</form>
+</div>
+[[${message}]]
+</body>
+</html>
